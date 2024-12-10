@@ -203,7 +203,6 @@
                 wheel.addEventListener("transitionend", () => {
                     const finalDegree = randomDegree % 360;
                     const segmentSizes = [30, 20, 25, 15, 40, 20, 30, 25, 20, 35, 50, 50];
-                    const segmentSizes = [10, 20, 10, 25, 15, 20];
                     const cumulativeSizes = segmentSizes.reduce((acc, size, index) => {
                         acc.push((acc[index - 1] || 0) + size);
                         return acc;
