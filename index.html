@@ -65,7 +65,7 @@
             position: relative;
             width: 300px;
             height: 300px;
-            margin-top: 50px;
+            margin-top: 40px; /* Adjust to provide space for the pointer */
         }
         #wheel {
             width: 100%;
@@ -94,14 +94,9 @@
         }
         #pointer {
             position: absolute;
-            top: -20px;
+            top: -20px; /* Position above the wheel */
             left: 50%;
             transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-            border-bottom: 30px solid #000;
             z-index: 10;
         }
         #pointer span {
@@ -174,15 +169,18 @@
         <i>Spin the wheel to see some of the prizes you could win by solving a challenge</i>
     <div id="wheel-container">
         <div id="wheel"></div>
-        <div id="pointer"><span></span></div>
+        <div id="pointer">
+            <svg width="40" height="40" viewBox="0 0 100 100">
+                <polygon points="50,0 100,100 0,100" fill="#000"/>
+            </svg>
+        </div>
     </div>
     <button onclick="spinWheel()">Spin</button>
     <div id="result"></div>
 
     <script>
         const segments = [
-            "Lunch with a special guest", "AWS credits", "helicopter ride", "bungee jumping tickets", "starbucks giftcard", "1st cash prize",
-            "2nd cash prize", "3rd cash prize", "interview with EF", "free stripe Atlas incorporation", "shoutout on the competition's socials", "anthropic credits"
+            "Prize 1", "Prize 2", "Prize 3", "Prize 4", "Prize 5", "Prize 6"
         ];
 
         function spinWheel() {
@@ -202,7 +200,7 @@
 
                 wheel.addEventListener("transitionend", () => {
                     const finalDegree = randomDegree % 360;
-                    const segmentSizes = [30, 20, 25, 15, 40, 20, 30, 25, 20, 35, 50, 50];
+                    const segmentSizes = [10, 20, 10, 25, 15, 20];
                     const cumulativeSizes = segmentSizes.reduce((acc, size, index) => {
                         acc.push((acc[index - 1] || 0) + size);
                         return acc;
