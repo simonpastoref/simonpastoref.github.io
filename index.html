@@ -183,8 +183,13 @@
 
                 wheel.addEventListener("transitionend", () => {
                     const finalDegree = randomDegree % 360;
-                    const segmentAngle = 360 / segments.length;
-                    const selectedIndex = Math.floor((360 - finalDegree) / segmentAngle) % segments.length;
+                    const segmentSizes = [10, 20, 10, 25, 15, 20];
+                    const cumulativeSizes = segmentSizes.reduce((acc, size, index) => {
+                        acc.push((acc[index - 1] || 0) + size);
+                        return acc;
+                    }, []);
+
+                    const selectedIndex = cumulativeSizes.findIndex(size => (360 - finalDegree) <= size);
                     const prize = segments[selectedIndex];
 
                     resultDiv.textContent = `You won: ${prize}`;
