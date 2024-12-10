@@ -180,8 +180,8 @@
 
     <script>
         const segments = [
-            "Lunch with a special guest", "AWS credits", "helicopter ride", "bungee jumping tickets", "starbucks giftcard", "1st cash prize",
-            "2nd cash prize", "3rd cash prize", "interview with EF", "free stripe Atlas incorporation", "shoutout on the competition's socials", "anthropic credits"
+            "a lunch with a special guest", "some AWS credits", "a helicopter ride", "bungee jumping tickets", "a starbucks giftcard", "the 1st cash prize",
+            "the 2nd cash prize", "the 3rd cash prize", "an interview with EF", "a free stripe Atlas incorporation", "a shoutout on the competition's socials", "some anthropic credits"
         ];
 
         function spinWheel() {
@@ -210,7 +210,7 @@
                     const selectedIndex = cumulativeSizes.findIndex(size => (360 - finalDegree) <= size);
                     const prize = segments[selectedIndex];
 
-                    resultDiv.textContent = `You won: ${prize}`;
+                    resultDiv.textContent = `You won ${prize}`;
                 }, { once: true });
             }, 0);
         }
