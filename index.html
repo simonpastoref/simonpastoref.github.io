@@ -161,7 +161,7 @@
         </ul>
         --->
 
-    <h2>Wheel of Prizes</h2>
+    <h2>Wheel of Prizes <span id="emoji"></span></h2>
         <i>Finishing first in a challenge will give you the opportunity to spin our wheel of prizes! Spin this wheel to see some of the amazing prizes you could win...</i>
     <div id="wheel-container">
         <div id="wheel"></div>
@@ -190,6 +190,14 @@
 
                 wheel.style.transition = "transform 4s ease-out";
                 wheel.style.transform = rotation;
+
+                // Select a random emoji
+                const emojis = ["🍴","⏱️","🚁","🪢","🤖","☕️","💸","💰","💵","🏛️","🎙️","📞","🗽","🚀","🔥","🎁","🏆"];
+                document.addEventListener("DOMContentLoaded", () => {
+                    const emojiSpan = document.getElementById("emoji");
+                    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                    emojiSpan.textContent = randomEmoji;
+                });
 
                 wheel.addEventListener("transitionend", () => {
                     const finalDegree = randomDegree % 360;
