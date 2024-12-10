@@ -93,12 +93,17 @@
             left: 0;
         }
         #pointer {
-            position: absolute;
-            top: -20px; /* Position above the wheel */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
+    position: absolute;
+    top: -20px; /* Position above the wheel */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #808080; /* Gray color */
+    z-index: 10;
+}
         #pointer span {
             position: absolute;
             top: 30px;
