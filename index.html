@@ -26,6 +26,8 @@
             max-width: 650px; 
         }
 
+        
+
         ul {
             margin-top: 0px;
         }
@@ -60,13 +62,98 @@
             background-color: transparent;
             text-decoration: underline;
         }
+        #wheel-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin-top: 50px;
+        }
+        #wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 5px solid #000;
+            background: conic-gradient(
+                #ff6f61 0% 16.6%,
+                #f7d154 16.6% 33.3%,
+                #75d872 33.3% 50%,
+                #4fa9f0 50% 66.6%,
+                #9e6eff 66.6% 83.3%,
+                #ff9f68 83.3% 100%
+            );
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #pointer {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 140px;
+            left: 140px;
+            z-index: 10;
+            border: 10px solid transparent;
+            border-bottom-color: #000;
+            transform: rotate(45deg);
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
     </style>
+</head>
+<body>
+    <h1>Wheel of Fortune</h1>
+    <div id="wheel-container">
+        <div id="wheel"></div>
+        <div id="pointer"></div>
+    </div>
+    <button onclick="spinWheel()">Spin the Wheel</button>
+    <div id="result"></div>
+
+    <script>
+        const segments = [
+            "Prize 1", "Prize 2", "Prize 3", "Prize 4", "Prize 5", "Prize 6"
+        ];
+
+        function spinWheel() {
+            const wheel = document.getElementById("wheel");
+            const resultDiv = document.getElementById("result");
+
+            const randomDegree = Math.floor(Math.random() * 360 + 3600); // Spin multiple rounds
+            const rotation = `rotate(${randomDegree}deg)`;
+
+            wheel.style.transition = "transform 4s ease-out";
+            wheel.style.transform = rotation;
+
+            wheel.addEventListener("transitionend", () => {
+                const finalDegree = randomDegree % 360;
+                const segmentAngle = 360 / segments.length;
+                const selectedIndex = Math.floor((360 - finalDegree) / segmentAngle) % segments.length;
+                const prize = segments[selectedIndex];
+
+                resultDiv.textContent = `You won: ${prize}`;
+            }, { once: true });
+        }
+    </script>
         
     <title>The Final Codedown</title>
 <script type="text/javascript" data-name="TokenSigning" data-by="Web-eID extension" src="chrome-extension://ncibgoaomkmdpilpocfeponihegamlic/token-signing-page-script.js"></script><link href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/inject.css" rel="stylesheet" type="text/css" data-apio="true"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_chrome-extension_inject_global_module_scss.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_common_components_ui_Form_module_scss-assets_common_components_ui_Tabs_module_scss-ass-cb3756.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_common_components_ui_rich-text-editor_toolbar_UserSnippetsButton_module_scss-assets_ap-c8aa33.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_components_ai-email-assist_OneOffEmail_AIAssistantPanel_AIAssistantPanel_tsx-asset-a7b93a.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_actions_emailAccountActions_tsx-assets_app_components_common_DateTimeSelectorDialo-1ff1b2.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_components_emailer-messages_EmailerMessageModal_module_scss-assets_app_containers_-270c71.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_chrome-extension_containers_everywhere_linkedin_entity-tabs_common_LinkedinSaveActions-031f2f.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_containers_voice_VoiceContainer_tsx-assets_chrome-extension_containers_everywhere_-7db09f.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_chrome-extension_containers_everywhere_linkedin_LinkedinBulkSelectPageOverlay_module_s-c5777f.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_chrome-extension_containers_everywhere_linkedin_LinkedinScrollLoadingOverlay_module_sc-54149e.css"><link rel="prefetch" as="style" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/nm_react-content-loader_dist_react-content-loader_es_js-assets_app_components_email-5f2452.css"><link rel="prefetch" as="script" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/node_modules_react-content-loader_dist_react-content-loader_es_js-assets_app_components_email-5f2452.chunk.js"><link rel="prefetch" as="style" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_components_finders_sieves_FinderPersonaSieve_tsx.css"><link rel="prefetch" as="script" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/assets_app_components_finders_sieves_FinderPersonaSieve_tsx.chunk.js"><style data-styled="" data-styled-version="4.4.1"></style><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_components_dialogs_TableLayoutModal_tsx.css"></head>
 
-
-<body>
     <div id="maincontent">
         
         <h2>The Final Codedown</h2>
