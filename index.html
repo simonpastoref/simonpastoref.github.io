@@ -2,14 +2,14 @@
     <head>
     <title>The Finale Codedown</title>
     <meta name="description" content="the most exciting time of the year!">
-  
+
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://www.finalcodedown.com">
     <meta property="og:type" content="website">
     <meta property="og:title" content="The Final Codedown">
     <meta property="og:description" content="the most exciting time of the year!">
     <meta property="og:image" content="https://aigrant.com/img/card.png">
-  
+
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="finalcodedown.com">
@@ -24,6 +24,7 @@
             padding: 0 25px;
             margin: 25px auto;
             max-width: 650px; 
+
         }
 
         ul {
@@ -39,7 +40,7 @@
         h2 {
             margin-bottom: 0px;
         }
-        
+
         a:link {
             color: purple;
             background-color: transparent;
@@ -85,7 +86,6 @@
                 #9e6eff 83.3% 91.6%,
                 #ff9f68 91.6% 100%
             );
-            
             align-items: center;
             justify-content: center;
             position: absolute;
@@ -94,9 +94,14 @@
         }
         #pointer {
             position: absolute;
-            top: -20px; /* Position above the wheel */
+            top: -20px;
             left: 50%;
             transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 30px solid #000;
             z-index: 10;
         }
         #pointer span {
@@ -109,6 +114,7 @@
             border-right: 10px solid transparent;
             border-top: 10px solid #000;
         }
+
         button {
             margin-top: 20px;
             padding: 10px 20px;
@@ -135,10 +141,10 @@
 <script type="text/javascript" data-name="TokenSigning" data-by="Web-eID extension" src="chrome-extension://ncibgoaomkmdpilpocfeponihegamlic/token-signing-page-script.js"></script><link href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/inject.css" rel="stylesheet" type="text/css" data-apio="true"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_chrome-extension_inject_global_module_scss.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_common_components_ui_Form_module_scss-assets_common_components_ui_Tabs_module_scss-ass-cb3756.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_common_components_ui_rich-text-editor_toolbar_UserSnippetsButton_module_scss-assets_ap-c8aa33.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_components_ai-email-assist_OneOffEmail_AIAssistantPanel_AIAssistantPanel_tsx-asset-a7b93a.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_actions_emailAccountActions_tsx-assets_app_components_common_DateTimeSelectorDialo-1ff1b2.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_components_emailer-messages_EmailerMessageModal_module_scss-assets_app_containers_-270c71.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_chrome-extension_containers_everywhere_linkedin_entity-tabs_common_LinkedinSaveActions-031f2f.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_containers_voice_VoiceContainer_tsx-assets_chrome-extension_containers_everywhere_-7db09f.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_chrome-extension_containers_everywhere_linkedin_LinkedinBulkSelectPageOverlay_module_s-c5777f.css"><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_chrome-extension_containers_everywhere_linkedin_LinkedinScrollLoadingOverlay_module_sc-54149e.css"><link rel="prefetch" as="style" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/nm_react-content-loader_dist_react-content-loader_es_js-assets_app_components_email-5f2452.css"><link rel="prefetch" as="script" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/node_modules_react-content-loader_dist_react-content-loader_es_js-assets_app_components_email-5f2452.chunk.js"><link rel="prefetch" as="style" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_components_finders_sieves_FinderPersonaSieve_tsx.css"><link rel="prefetch" as="script" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/assets_app_components_finders_sieves_FinderPersonaSieve_tsx.chunk.js"><style data-styled="" data-styled-version="4.4.1"></style><link data-apio="true" rel="stylesheet" type="text/css" href="chrome-extension://alhgpfoeiimagjlnfekdhkjlkiomcapa/js/css/a_app_components_dialogs_TableLayoutModal_tsx.css"></head>
 
     <div id="maincontent">
-        
+
         <h2>The Final Codedown</h2>
         <br>
-        On December 16, a dozen of the most exciting startups will release a challenge that a large audience of exceptional technical talent will attempt to solve to win exciting prizes and opportunities to join one of these fast-growing companies.
+        On December 16, 15 of the most exciting startups will release a challenge that a large audience of exceptional technical talent will attempt to solve to win exciting prizes and opportunities to join one of these fast-growing companies.
         <br>
         <br>
         Participating companies include:
@@ -163,23 +169,20 @@
           
         </ul>
         --->
-        
+
     <h2>Wheel of Prizes</h2>
         <i>Spin the wheel to see some of the prizes you could win by solving a challenge</i>
     <div id="wheel-container">
         <div id="wheel"></div>
-        <div id="pointer">
-            <svg width="40" height="40" viewBox="0 0 100 100">
-                <polygon points="50,0 100,100 0,100" fill="#000"/>
-            </svg>
-        </div>
+        <div id="pointer"><span></span></div>
     </div>
     <button onclick="spinWheel()">Spin</button>
     <div id="result"></div>
 
     <script>
         const segments = [
-            "Prize 1", "Prize 2", "Prize 3", "Prize 4", "Prize 5", "Prize 6"
+            "Lunch with a special guest", "AWS credits", "helicopter ride", "bungee jumping tickets", "starbucks giftcard", "1st cash prize",
+            "2nd cash prize", "3rd cash prize", "interview with EF", "free stripe Atlas incorporation", "shoutout on the competition's socials", "anthropic credits"
         ];
 
         function spinWheel() {
@@ -199,6 +202,7 @@
 
                 wheel.addEventListener("transitionend", () => {
                     const finalDegree = randomDegree % 360;
+                    const segmentSizes = [30, 20, 25, 15, 40, 20, 30, 25, 20, 35, 50, 50];
                     const segmentSizes = [10, 20, 10, 25, 15, 20];
                     const cumulativeSizes = segmentSizes.reduce((acc, size, index) => {
                         acc.push((acc[index - 1] || 0) + size);
