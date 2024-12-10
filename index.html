@@ -110,17 +110,14 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            background-color: #000; /* Black background */
-            color: #fff; /* White text */
+            background-color: #007bff;
+            color: #fff;
             border: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-
         }
         button:hover {
-            background-color: #333; /* Dark gray background on hover */
+            background-color: #0056b3;
         }
-        
         #result {
             margin-top: 20px;
             font-size: 20px;
@@ -165,7 +162,10 @@
 
     <h2>Wheel of Prizes</h2>
         <i>Finishing first in a challenge will give you a chance to spin our wheel of prizes. Spin this wheel to see some of the prizes you could win...</i>
-    <div id="pointer"></div>
+    <div id="wheel-container">
+        <div id="wheel"></div>
+        <div id="pointer"><span></span></div>
+    </div>
     <button onclick="spinWheel()">Spin</button>
     <div id="result"></div>
 
