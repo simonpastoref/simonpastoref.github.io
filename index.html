@@ -73,12 +73,18 @@
             border-radius: 50%;
             border: 5px solid #000;
             background: conic-gradient(
-                #ff6f61 0% 10%,
-                #f7d154 10% 30%,
-                #75d872 30% 40%,
-                #4fa9f0 40% 65%,
-                #9e6eff 65% 80%,
-                #ff9f68 80% 100%
+                #ff6f61 0% 8.3%,
+                #f7d154 8.3% 16.6%,
+                #75d872 16.6% 25%,
+                #4fa9f0 25% 33.3%,
+                #9e6eff 33.3% 41.6%,
+                #ff9f68 41.6% 50%,
+                #ff6f61 50% 58.3%,
+                #f7d154 58.3% 66.6%,
+                #75d872 66.6% 75%,
+                #4fa9f0 75% 83.3%,
+                #9e6eff 83.3% 91.6%,
+                #ff9f68 91.6% 100%
             );
             align-items: center;
             justify-content: center;
@@ -163,7 +169,8 @@
 
     <script>
         const segments = [
-            "Prize 1", "Prize 2", "Prize 3", "Prize 4", "Prize 5", "Prize 6"
+            "Lunch with a special guest", "AWS credits", "helicopter ride", "bungee jumping tickets", "starbucks giftcard", "1st cash prize",
+            "2nd cash prize", "3rd cash prize", "interview with EF", "free stripe Atlas incorporation", "shoutout on the competition's socials", "anthropic credits"
         ];
 
         function spinWheel() {
@@ -183,7 +190,7 @@
 
                 wheel.addEventListener("transitionend", () => {
                     const finalDegree = randomDegree % 360;
-                    const segmentSizes = [10, 20, 10, 25, 15, 20];
+                    const segmentSizes = [30, 20, 25, 15, 40, 20, 30, 25, 20, 35, 50, 50];
                     const cumulativeSizes = segmentSizes.reduce((acc, size, index) => {
                         acc.push((acc[index - 1] || 0) + size);
                         return acc;
