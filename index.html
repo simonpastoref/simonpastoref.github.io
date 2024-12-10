@@ -94,14 +94,9 @@
         }
         #pointer {
             position: absolute;
-            top: -20px;
+            top: -20px; /* Position above the wheel */
             left: 50%;
             transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-            border-bottom: 30px solid #000;
             z-index: 10;
         }
         #pointer span {
@@ -174,7 +169,11 @@
         <i>Spin the wheel to see some of the prizes you could win by solving a challenge</i>
     <div id="wheel-container">
         <div id="wheel"></div>
-        <div id="pointer"><span></span></div>
+        <div id="pointer">
+            <svg width="40" height="40" viewBox="0 0 100 100">
+                <polygon points="50,0 100,100 0,100" fill="#000"/>
+            </svg>
+        </div>
     </div>
     <button onclick="spinWheel()">Spin</button>
     <div id="result"></div>
