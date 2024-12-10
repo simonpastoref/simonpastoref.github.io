@@ -165,20 +165,26 @@
             const wheel = document.getElementById("wheel");
             const resultDiv = document.getElementById("result");
 
-            const randomDegree = Math.floor(Math.random() * 360 + 3600); // Spin multiple rounds
-            const rotation = `rotate(${randomDegree}deg)`;
+            // Reset the transition and transform for repeated spins
+            wheel.style.transition = "none";
+            wheel.style.transform = "rotate(0deg)";
 
-            wheel.style.transition = "transform 4s ease-out";
-            wheel.style.transform = rotation;
+            setTimeout(() => {
+                const randomDegree = Math.floor(Math.random() * 360 + 3600); // Spin multiple rounds
+                const rotation = `rotate(${randomDegree}deg)`;
 
-            wheel.addEventListener("transitionend", () => {
-                const finalDegree = randomDegree % 360;
-                const segmentAngle = 360 / segments.length;
-                const selectedIndex = Math.floor((360 - finalDegree) / segmentAngle) % segments.length;
-                const prize = segments[selectedIndex];
+                wheel.style.transition = "transform 4s ease-out";
+                wheel.style.transform = rotation;
 
-                resultDiv.textContent = `You won: ${prize}`;
-            }, { once: true });
+                wheel.addEventListener("transitionend", () => {
+                    const finalDegree = randomDegree % 360;
+                    const segmentAngle = 360 / segments.length;
+                    const selectedIndex = Math.floor((360 - finalDegree) / segmentAngle) % segments.length;
+                    const prize = segments[selectedIndex];
+
+                    resultDiv.textContent = `You won: ${prize}`;
+                }, { once: true });
+            }, 0);
         }
     </script>
     </div>
