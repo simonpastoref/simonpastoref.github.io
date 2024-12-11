@@ -174,19 +174,18 @@
         const segments = [
             "a lunch with a (very) special guest🍴", "AWS credits 🤖", "a helicopter ride 🚁", "bungee jumping tickets 🪢", "a Starbucks giftcard ☕️", "the 1st cash prize 💰💰💰",
             "the 2nd cash prize 💸💸", "the 3rd cash prize 💵", "an interview with EF 📞", "a free Stripe Atlas incorporation 🏛️", "a shoutout on the competition's socials 🎙️", "Anthropic credits 🦾"
+        const emojis = ["🍴","⏱️","🚁","🪢","🤖","☕️","💸","💰","💵","🏛️","🎙️","📞","🗽","🚀","🔥","🎁","🏆"];
         ];
 
         function spinWheel() {
             const wheel = document.getElementById("wheel");
             const resultDiv = document.getElementById("result");
 
-            // Select a random emoji
-            const emojis = ["🍴","⏱️","🚁","🪢","🤖","☕️","💸","💰","💵","🏛️","🎙️","📞","🗽","🚀","🔥","🎁","🏆"];
-            document.addEventListener("DOMContentLoaded", () => {
-                const emojiSpan = document.getElementById("emoji");
-                const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-                emojiSpan.textContent = randomEmoji;
-                });
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Display the emoji next to the header
+            const emojiSpan = document.getElementById("emoji");
+            emojiSpan.textContent = randomEmoji;
 
             // Reset the transition and transform for repeated spins
             wheel.style.transition = "none";
