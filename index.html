@@ -180,6 +180,14 @@
             const wheel = document.getElementById("wheel");
             const resultDiv = document.getElementById("result");
 
+            // Select a random emoji
+            const emojis = ["🍴","⏱️","🚁","🪢","🤖","☕️","💸","💰","💵","🏛️","🎙️","📞","🗽","🚀","🔥","🎁","🏆"];
+            document.addEventListener("DOMContentLoaded", () => {
+                const emojiSpan = document.getElementById("emoji");
+                const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                emojiSpan.textContent = randomEmoji;
+                });
+
             // Reset the transition and transform for repeated spins
             wheel.style.transition = "none";
             wheel.style.transform = "rotate(0deg)";
@@ -190,14 +198,6 @@
 
                 wheel.style.transition = "transform 4s ease-out";
                 wheel.style.transform = rotation;
-
-                // Select a random emoji
-                const emojis = ["🍴","⏱️","🚁","🪢","🤖","☕️","💸","💰","💵","🏛️","🎙️","📞","🗽","🚀","🔥","🎁","🏆"];
-                document.addEventListener("DOMContentLoaded", () => {
-                    const emojiSpan = document.getElementById("emoji");
-                    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-                    emojiSpan.textContent = randomEmoji;
-                });
 
                 wheel.addEventListener("transitionend", () => {
                     const finalDegree = randomDegree % 360;
