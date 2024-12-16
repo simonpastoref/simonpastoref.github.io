@@ -84,18 +84,21 @@
             border-radius: 50%;
             border: 5px solid #000;
             background: conic-gradient(
-                #ff6f61 0% 8.3%,
-                #f7d154 8.3% 16.6%,
-                #75d872 16.6% 25%,
-                #4fa9f0 25% 33.3%,
-                #9e6eff 33.3% 41.6%,
-                #ff9f68 41.6% 50%,
-                #ff6f61 50% 58.3%,
-                #f7d154 58.3% 66.6%,
-                #75d872 66.6% 75%,
-                #4fa9f0 75% 83.3%,
-                #9e6eff 83.3% 91.6%,
-                #ff9f68 91.6% 100%
+                #ff6f61 0deg 24deg,
+                #f7d154 24deg 48deg,
+                #75d872 48deg 72deg,
+                #4fa9f0 72deg 96deg,
+                #9e6eff 96deg 120deg,
+                #ff9f68 120deg 144deg,
+                #ff6f61 144deg 168deg,
+                #f7d154 168deg 192deg,
+                #75d872 192deg 216deg,
+                #4fa9f0 216deg 240deg,
+                #9e6eff 240deg 264deg,
+                #ff9f68 264deg 288deg,
+                #ff6f61 288deg 312deg,
+                #f7d154 312deg 336deg,
+                #75d872 336deg 360deg
             );
             align-items: center;
             justify-content: center;
@@ -186,10 +189,11 @@
 
     <script>
         const segments = [
-            "a lunch with a (very) special guest🍴", "AWS credits 🤖", "a helicopter ride 🚁", "bungee jumping tickets 🪢", "a Starbucks giftcard ☕️", "the 1st cash prize 💰💰💰",
-            "the 2nd cash prize 💸💸", "the 3rd cash prize 💵", "an interview with EF 📞", "a free Stripe Atlas incorporation 🏛️", "a shoutout on the competition's socials 🎙️", "Anthropic credits 🦾"];
+            "a lunch with a (very) special guest🍴", "AWS credits 🤖", "a gpu 💾", "a mechanical keyboard ⌨️", "a Starbucks giftcard ☕️", "the 1st cash prize 💰💰💰",
+            "the 2nd cash prize 💸💸", "the 3rd cash prize 💵", "a 3d printer  🖨️", "a free Stripe Atlas incorporation 🏛️", "a shoutout on the competition's socials 🎙️", "Anthropic credits 🦾",
+            "free San Francisco office (1 month) 🌁", "free New York office (1 month) 🗽", "exclusive merch 🧢"];
         const emojis = ["🍴","⏱️","🚁","🪢","🤖","☕️","💸","💰","💵","🏛️","🎙️","📞","🗽","🚀","🔥","🎁","🏆", "👑","⚱️","₿","👠","🏎️","🛼"];
-        
+       
 
         function spinWheel() {
             const wheel = document.getElementById("wheel");
