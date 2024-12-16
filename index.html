@@ -226,7 +226,7 @@
                     const selectedIndex = cumulativeSizes.findIndex(size => (360 - finalDegree) <= size);
                     const prize = segments[selectedIndex];
 
-                    resultDiv.textContent = `You won ${prize}`;
+                    resultDiv.textContent = `${prize}`;
                 }, { once: true });
             }, 0);
         }
