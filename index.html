@@ -48,6 +48,12 @@
             margin-top: 70px;
         }
 
+        #countdown {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
         h2 {
             margin-bottom: 0px;
         }
@@ -190,6 +196,34 @@
     <div id="result"></div>
 
     <script>
+        // Set the date and time for the event (e.g., December 31, 2024, at 23:59:59)
+        const eventDate = new Date("December 17, 2024 10:00:00").getTime();
+        
+        // Update the countdown every second
+        const countdownFunction = setInterval(() => {
+            // Get the current date and time
+            const now = new Date().getTime();
+            
+            // Calculate the time difference between the event date and now
+            const timeRemaining = eventDate - now;
+
+            // Time calculations for days, hours, minutes, and seconds
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML =
+                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown is over, display a message and stop the timer
+            if (timeRemaining < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "The event has started!";
+            }
+        }, 1000);
+
         const segments = [
             "lunch with a (very) special guest🍴", "AWS credits 🤖", "a GPU 💾", "a mechanical keyboard ⌨️", "a Starbucks giftcard ☕️", "1st cash prize 💰💰💰",
             "2nd cash prize 💸💸", "3rd cash prize 💵", "a 3D Printer  🖨️", "a free Stripe Atlas incorporation 🏛️", "a shoutout on the competition's socials 🎙️", "Anthropic credits 🦾",
